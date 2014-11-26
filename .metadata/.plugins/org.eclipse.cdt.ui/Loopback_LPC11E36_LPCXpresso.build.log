@@ -1,0 +1,16 @@
+10:56:00 **** Incremental Build of configuration Debug for project Loopback_LPC11E36_LPCXpresso ****
+make all 
+Building target: Loopback_LPC11E36_LPCXpresso.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\Debug" -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\Debug" -Xlinker -Map="Loopback_LPC11E36_LPCXpresso.map" -Xlinker --gc-sections -mcpu=cortex-m0 -mthumb -T "Loopback_LPC11E36_LPCXpresso_Debug.ld" -o "Loopback_LPC11E36_LPCXpresso.axf"  ./src/ioLibrary/Internet/DNS/dns.o  ./src/ioLibrary/Internet/DHCP/dhcp.o  ./src/ioLibrary/Ethernet/W5500/w5500.o  ./src/ioLibrary/Ethernet/socket.o ./src/ioLibrary/Ethernet/wizchip_conf.o  ./src/PlatformHandler/spi_handler.o  ./src/Application/loopback.o  ./src/W5500EVB.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc11exx.o ./src/crp.o ./src/sysinit.o ./src/w5500_init.o   -lwiznet_evb_w5500evb_board -llpc_chip_11exx
+Finished building target: Loopback_LPC11E36_LPCXpresso.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Loopback_LPC11E36_LPCXpresso.axf" ; arm-none-eabi-objcopy -O ihex "Loopback_LPC11E36_LPCXpresso.axf" "Loopback_LPC11E36_LPCXpresso.hex" ; # arm-none-eabi-objcopy -v -O binary "Loopback_LPC11E36_LPCXpresso.axf" "Loopback_LPC11E36_LPCXpresso.bin" ; # checksum -p LPC11E36_501 -d "Loopback_LPC11E36_LPCXpresso.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19904	     36	    520	  20460	   4fec	Loopback_LPC11E36_LPCXpresso.axf
+ 
+
+10:56:01 Build Finished (took 1s.780ms)
+

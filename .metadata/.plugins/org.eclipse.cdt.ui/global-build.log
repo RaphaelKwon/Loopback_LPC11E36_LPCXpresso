@@ -1,0 +1,458 @@
+10:55:54 **** Incremental Build of configuration Debug for project lpc_chip_11exx ****
+make all 
+make: Nothing to be done for `all'.
+10:55:55 **** Build of configuration Debug for project wiznet_evb_w5500evb_board ****
+make all 
+Building file: ../src/board.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M0 -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -Og -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/board.d" -MT"src/board.d" -o "src/board.o" "../src/board.c"
+Finished building: ../src/board.c
+ 
+Building file: ../src/board_sysinit.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M0 -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -Og -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/board_sysinit.d" -MT"src/board_sysinit.d" -o "src/board_sysinit.o" "../src/board_sysinit.c"
+Finished building: ../src/board_sysinit.c
+ 
+Building target: libwiznet_evb_w5500evb_board.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libwiznet_evb_w5500evb_board.a"  ./src/board.o ./src/board_sysinit.o   
+c:\nxp\LPCXpresso_7.2.0_153\lpcxpresso\tools\bin\arm-none-eabi-ar.exe: creating libwiznet_evb_w5500evb_board.a
+Finished building target: libwiznet_evb_w5500evb_board.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libwiznet_evb_w5500evb_board.a" ; # arm-none-eabi-objdump -h -S "libwiznet_evb_w5500evb_board.a" >"libwiznet_evb_w5500evb_board.lss"
+   text	   data	    bss	    dec	    hex	filename
+    508	      0	      0	    508	    1fc	board.o (ex libwiznet_evb_w5500evb_board.a)
+    264	      0	      0	    264	    108	board_sysinit.o (ex libwiznet_evb_w5500evb_board.a)
+ 
+10:56:00 **** Incremental Build of configuration Debug for project Loopback_LPC11E36_LPCXpresso ****
+make all 
+Building target: Loopback_LPC11E36_LPCXpresso.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\Debug" -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\Debug" -Xlinker -Map="Loopback_LPC11E36_LPCXpresso.map" -Xlinker --gc-sections -mcpu=cortex-m0 -mthumb -T "Loopback_LPC11E36_LPCXpresso_Debug.ld" -o "Loopback_LPC11E36_LPCXpresso.axf"  ./src/ioLibrary/Internet/DNS/dns.o  ./src/ioLibrary/Internet/DHCP/dhcp.o  ./src/ioLibrary/Ethernet/W5500/w5500.o  ./src/ioLibrary/Ethernet/socket.o ./src/ioLibrary/Ethernet/wizchip_conf.o  ./src/PlatformHandler/spi_handler.o  ./src/Application/loopback.o  ./src/W5500EVB.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc11exx.o ./src/crp.o ./src/sysinit.o ./src/w5500_init.o   -lwiznet_evb_w5500evb_board -llpc_chip_11exx
+Finished building target: Loopback_LPC11E36_LPCXpresso.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "Loopback_LPC11E36_LPCXpresso.axf" ; arm-none-eabi-objcopy -O ihex "Loopback_LPC11E36_LPCXpresso.axf" "Loopback_LPC11E36_LPCXpresso.hex" ; # arm-none-eabi-objcopy -v -O binary "Loopback_LPC11E36_LPCXpresso.axf" "Loopback_LPC11E36_LPCXpresso.bin" ; # checksum -p LPC11E36_501 -d "Loopback_LPC11E36_LPCXpresso.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19904	     36	    520	  20460	   4fec	Loopback_LPC11E36_LPCXpresso.axf
+ 
+13:23:00 **** Clean-only build of configuration Debug for project DNS_LPC11E36_LPCXpresso ****
+make clean 
+rm -rf  ./src/ioLibrary/Internet/DNS/dns.o  ./src/ioLibrary/Internet/DHCP/dhcp.o  ./src/ioLibrary/Ethernet/W5500/w5500.o  ./src/ioLibrary/Ethernet/socket.o ./src/ioLibrary/Ethernet/wizchip_conf.o  ./src/PlatformHandler/spi_handler.o  ./src/Application/loopback.o  ./src/W5500EVB.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc11exx.o ./src/crp.o ./src/sysinit.o ./src/w5500_init.o  ./src/ioLibrary/Internet/DNS/dns.d  ./src/ioLibrary/Internet/DHCP/dhcp.d  ./src/ioLibrary/Ethernet/W5500/w5500.d  ./src/ioLibrary/Ethernet/socket.d ./src/ioLibrary/Ethernet/wizchip_conf.d  ./src/PlatformHandler/spi_handler.d  ./src/Application/loopback.d  ./src/W5500EVB.d ./src/cr_startup_lpc11exx.d ./src/crp.d ./src/sysinit.d ./src/w5500_init.d  Loopback_LPC11E36_LPCXpresso.axf
+ 
+13:23:01 **** Build of configuration Debug for project DNS_LPC11E36_LPCXpresso ****
+make all 
+Building file: ../src/ioLibrary/Internet/DNS/dns.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Internet/DNS/dns.d" -MT"src/ioLibrary/Internet/DNS/dns.d" -o "src/ioLibrary/Internet/DNS/dns.o" "../src/ioLibrary/Internet/DNS/dns.c"
+Finished building: ../src/ioLibrary/Internet/DNS/dns.c
+ 
+Building file: ../src/ioLibrary/Internet/DHCP/dhcp.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Internet/DHCP/dhcp.d" -MT"src/ioLibrary/Internet/DHCP/dhcp.d" -o "src/ioLibrary/Internet/DHCP/dhcp.o" "../src/ioLibrary/Internet/DHCP/dhcp.c"
+../src/ioLibrary/Internet/DHCP/dhcp.c: In function 'parseDHCPMSG':
+../src/ioLibrary/Internet/DHCP/dhcp.c:667:2: warning: 'type' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  return type;
+  ^
+Finished building: ../src/ioLibrary/Internet/DHCP/dhcp.c
+ 
+Building file: ../src/ioLibrary/Ethernet/W5500/w5500.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Ethernet/W5500/w5500.d" -MT"src/ioLibrary/Ethernet/W5500/w5500.d" -o "src/ioLibrary/Ethernet/W5500/w5500.o" "../src/ioLibrary/Ethernet/W5500/w5500.c"
+Finished building: ../src/ioLibrary/Ethernet/W5500/w5500.c
+ 
+Building file: ../src/ioLibrary/Ethernet/socket.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Ethernet/socket.d" -MT"src/ioLibrary/Ethernet/socket.d" -o "src/ioLibrary/Ethernet/socket.o" "../src/ioLibrary/Ethernet/socket.c"
+Finished building: ../src/ioLibrary/Ethernet/socket.c
+ 
+Building file: ../src/ioLibrary/Ethernet/wizchip_conf.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Ethernet/wizchip_conf.d" -MT"src/ioLibrary/Ethernet/wizchip_conf.d" -o "src/ioLibrary/Ethernet/wizchip_conf.o" "../src/ioLibrary/Ethernet/wizchip_conf.c"
+Finished building: ../src/ioLibrary/Ethernet/wizchip_conf.c
+ 
+Building file: ../src/PlatformHandler/spi_handler.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/PlatformHandler/spi_handler.d" -MT"src/PlatformHandler/spi_handler.d" -o "src/PlatformHandler/spi_handler.o" "../src/PlatformHandler/spi_handler.c"
+Finished building: ../src/PlatformHandler/spi_handler.c
+ 
+Building file: ../src/Application/loopback.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/Application/loopback.d" -MT"src/Application/loopback.d" -o "src/Application/loopback.o" "../src/Application/loopback.c"
+../src/Application/loopback.c: In function 'loopback_tcps':
+../src/Application/loopback.c:187:6: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+      printf("%d: Connected\r\n", sn);
+      ^
+../src/Application/loopback.c: In function 'loopback_udps':
+../src/Application/loopback.c:265:13: warning: unused variable 'packinfo' [-Wunused-variable]
+    uint8_t  packinfo = 0;
+             ^
+../src/Application/loopback.c: In function 'loopback_tcps':
+../src/Application/loopback.c:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Application/loopback.c
+ 
+Building file: ../src/W5500EVB.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/W5500EVB.d" -MT"src/W5500EVB.d" -o "src/W5500EVB.o" "../src/W5500EVB.c"
+In file included from ../src/W5500EVB.c:21:0:
+../src/common.h:13:0: warning: "NULL" redefined [enabled by default]
+ #define NULL 0
+ ^
+In file included from C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc/chip.h:32:0,
+                 from C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc/board.h:14,
+                 from ../src/W5500EVB.c:15:
+C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc/lpc_types.h:133:0: note: this is the location of the previous definition
+ #define NULL ((void *) 0)
+ ^
+../src/W5500EVB.c: In function 'main':
+../src/W5500EVB.c:68:2: warning: implicit declaration of function 'DNS_init' [-Wimplicit-function-declaration]
+  DNS_init(0, gDATABUF);
+  ^
+../src/W5500EVB.c:69:2: warning: implicit declaration of function 'DNS_run' [-Wimplicit-function-declaration]
+  DNS_run(uint8_t * dns_ip, uint8_t * name, uint8_t * ip_from_dns);
+  ^
+../src/W5500EVB.c:69:10: error: expected expression before 'uint8_t'
+  DNS_run(uint8_t * dns_ip, uint8_t * name, uint8_t * ip_from_dns);
+          ^
+make: *** [src/W5500EVB.o] Error 1
+13:42:24 **** Incremental Build of configuration Debug for project DNS_LPC11E36_LPCXpresso ****
+make all 
+Building file: ../src/W5500EVB.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/W5500EVB.d" -MT"src/W5500EVB.d" -o "src/W5500EVB.o" "../src/W5500EVB.c"
+In file included from ../src/W5500EVB.c:21:0:
+../src/common.h:13:0: warning: "NULL" redefined [enabled by default]
+ #define NULL 0
+ ^
+In file included from C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc/chip.h:32:0,
+                 from C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc/board.h:14,
+                 from ../src/W5500EVB.c:15:
+C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc/lpc_types.h:133:0: note: this is the location of the previous definition
+ #define NULL ((void *) 0)
+ ^
+../src/W5500EVB.c: In function 'main':
+../src/W5500EVB.c:38:20: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+  uint8_t *domain = "www.google.com";
+                    ^
+Finished building: ../src/W5500EVB.c
+ 
+Building file: ../src/aeabi_romdiv_patch.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -g3 -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -o "src/aeabi_romdiv_patch.o" "../src/aeabi_romdiv_patch.s"
+Finished building: ../src/aeabi_romdiv_patch.s
+ 
+Building file: ../src/cr_startup_lpc11exx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc11exx.d" -MT"src/cr_startup_lpc11exx.d" -o "src/cr_startup_lpc11exx.o" "../src/cr_startup_lpc11exx.c"
+Finished building: ../src/cr_startup_lpc11exx.c
+ 
+Building file: ../src/crp.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/crp.d" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+Finished building: ../src/crp.c
+ 
+Building file: ../src/sysinit.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/sysinit.d" -MT"src/sysinit.d" -o "src/sysinit.o" "../src/sysinit.c"
+Finished building: ../src/sysinit.c
+ 
+Building file: ../src/w5500_init.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/w5500_init.d" -MT"src/w5500_init.d" -o "src/w5500_init.o" "../src/w5500_init.c"
+Finished building: ../src/w5500_init.c
+ 
+Building target: DNS_LPC11E36_LPCXpresso.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\Debug" -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\Debug" -Xlinker -Map="DNS_LPC11E36_LPCXpresso.map" -Xlinker --gc-sections -mcpu=cortex-m0 -mthumb -T "Loopback_LPC11E36_LPCXpresso_Debug.ld" -o "DNS_LPC11E36_LPCXpresso.axf"  ./src/ioLibrary/Internet/DNS/dns.o  ./src/ioLibrary/Internet/DHCP/dhcp.o  ./src/ioLibrary/Ethernet/W5500/w5500.o  ./src/ioLibrary/Ethernet/socket.o ./src/ioLibrary/Ethernet/wizchip_conf.o  ./src/PlatformHandler/spi_handler.o  ./src/Application/loopback.o  ./src/W5500EVB.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc11exx.o ./src/crp.o ./src/sysinit.o ./src/w5500_init.o   -lwiznet_evb_w5500evb_board -llpc_chip_11exx
+Finished building target: DNS_LPC11E36_LPCXpresso.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "DNS_LPC11E36_LPCXpresso.axf" ; arm-none-eabi-objcopy -O ihex "DNS_LPC11E36_LPCXpresso.axf" "DNS_LPC11E36_LPCXpresso.hex" ; # arm-none-eabi-objcopy -v -O binary "DNS_LPC11E36_LPCXpresso.axf" "DNS_LPC11E36_LPCXpresso.bin" ; # checksum -p LPC11E36_501 -d "DNS_LPC11E36_LPCXpresso.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19520	     36	    532	  20088	   4e78	DNS_LPC11E36_LPCXpresso.axf
+ 
+13:43:16 **** Incremental Build of configuration Debug for project DNS_LPC11E36_LPCXpresso ****
+make all 
+Building file: ../src/Application/loopback.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/Application/loopback.d" -MT"src/Application/loopback.d" -o "src/Application/loopback.o" "../src/Application/loopback.c"
+../src/Application/loopback.c: In function 'loopback_tcps':
+../src/Application/loopback.c:187:6: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+      printf("%d: Connected\r\n", sn);
+      ^
+../src/Application/loopback.c: In function 'loopback_udps':
+../src/Application/loopback.c:265:13: warning: unused variable 'packinfo' [-Wunused-variable]
+    uint8_t  packinfo = 0;
+             ^
+../src/Application/loopback.c: In function 'loopback_tcps':
+../src/Application/loopback.c:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Application/loopback.c
+ 
+Building file: ../src/W5500EVB.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/W5500EVB.d" -MT"src/W5500EVB.d" -o "src/W5500EVB.o" "../src/W5500EVB.c"
+../src/W5500EVB.c: In function 'main':
+../src/W5500EVB.c:38:20: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+  uint8_t *domain = "www.google.com";
+                    ^
+Finished building: ../src/W5500EVB.c
+ 
+Building target: DNS_LPC11E36_LPCXpresso.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\Debug" -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\Debug" -Xlinker -Map="DNS_LPC11E36_LPCXpresso.map" -Xlinker --gc-sections -mcpu=cortex-m0 -mthumb -T "Loopback_LPC11E36_LPCXpresso_Debug.ld" -o "DNS_LPC11E36_LPCXpresso.axf"  ./src/ioLibrary/Internet/DNS/dns.o  ./src/ioLibrary/Internet/DHCP/dhcp.o  ./src/ioLibrary/Ethernet/W5500/w5500.o  ./src/ioLibrary/Ethernet/socket.o ./src/ioLibrary/Ethernet/wizchip_conf.o  ./src/PlatformHandler/spi_handler.o  ./src/Application/loopback.o  ./src/W5500EVB.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc11exx.o ./src/crp.o ./src/sysinit.o ./src/w5500_init.o   -lwiznet_evb_w5500evb_board -llpc_chip_11exx
+Finished building target: DNS_LPC11E36_LPCXpresso.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "DNS_LPC11E36_LPCXpresso.axf" ; arm-none-eabi-objcopy -O ihex "DNS_LPC11E36_LPCXpresso.axf" "DNS_LPC11E36_LPCXpresso.hex" ; # arm-none-eabi-objcopy -v -O binary "DNS_LPC11E36_LPCXpresso.axf" "DNS_LPC11E36_LPCXpresso.bin" ; # checksum -p LPC11E36_501 -d "DNS_LPC11E36_LPCXpresso.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19520	     36	    532	  20088	   4e78	DNS_LPC11E36_LPCXpresso.axf
+ 
+13:43:31 **** Incremental Build of configuration Debug for project DNS_LPC11E36_LPCXpresso ****
+make all 
+Building file: ../src/W5500EVB.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/W5500EVB.d" -MT"src/W5500EVB.d" -o "src/W5500EVB.o" "../src/W5500EVB.c"
+../src/W5500EVB.c: In function 'main':
+../src/W5500EVB.c:70:2: warning: pointer targets in passing argument 2 of 'DNS_run' differ in signedness [-Wpointer-sign]
+  DNS_run(dns_ip, domain, ip_from_dns);
+  ^
+In file included from ../src/W5500EVB.c:22:0:
+../src/ioLibrary/Internet/DNS/dns.h:93:8: note: expected 'uint8_t *' but argument is of type 'char *'
+ int8_t DNS_run(uint8_t * dns_ip, uint8_t * name, uint8_t * ip_from_dns);
+        ^
+Finished building: ../src/W5500EVB.c
+ 
+Building target: DNS_LPC11E36_LPCXpresso.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\Debug" -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\Debug" -Xlinker -Map="DNS_LPC11E36_LPCXpresso.map" -Xlinker --gc-sections -mcpu=cortex-m0 -mthumb -T "Loopback_LPC11E36_LPCXpresso_Debug.ld" -o "DNS_LPC11E36_LPCXpresso.axf"  ./src/ioLibrary/Internet/DNS/dns.o  ./src/ioLibrary/Internet/DHCP/dhcp.o  ./src/ioLibrary/Ethernet/W5500/w5500.o  ./src/ioLibrary/Ethernet/socket.o ./src/ioLibrary/Ethernet/wizchip_conf.o  ./src/PlatformHandler/spi_handler.o  ./src/Application/loopback.o  ./src/W5500EVB.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc11exx.o ./src/crp.o ./src/sysinit.o ./src/w5500_init.o   -lwiznet_evb_w5500evb_board -llpc_chip_11exx
+Finished building target: DNS_LPC11E36_LPCXpresso.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "DNS_LPC11E36_LPCXpresso.axf" ; arm-none-eabi-objcopy -O ihex "DNS_LPC11E36_LPCXpresso.axf" "DNS_LPC11E36_LPCXpresso.hex" ; # arm-none-eabi-objcopy -v -O binary "DNS_LPC11E36_LPCXpresso.axf" "DNS_LPC11E36_LPCXpresso.bin" ; # checksum -p LPC11E36_501 -d "DNS_LPC11E36_LPCXpresso.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19520	     36	    532	  20088	   4e78	DNS_LPC11E36_LPCXpresso.axf
+ 
+13:43:44 **** Incremental Build of configuration Debug for project DNS_LPC11E36_LPCXpresso ****
+make all 
+Building file: ../src/W5500EVB.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/W5500EVB.d" -MT"src/W5500EVB.d" -o "src/W5500EVB.o" "../src/W5500EVB.c"
+Finished building: ../src/W5500EVB.c
+ 
+Building target: DNS_LPC11E36_LPCXpresso.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\Debug" -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\Debug" -Xlinker -Map="DNS_LPC11E36_LPCXpresso.map" -Xlinker --gc-sections -mcpu=cortex-m0 -mthumb -T "Loopback_LPC11E36_LPCXpresso_Debug.ld" -o "DNS_LPC11E36_LPCXpresso.axf"  ./src/ioLibrary/Internet/DNS/dns.o  ./src/ioLibrary/Internet/DHCP/dhcp.o  ./src/ioLibrary/Ethernet/W5500/w5500.o  ./src/ioLibrary/Ethernet/socket.o ./src/ioLibrary/Ethernet/wizchip_conf.o  ./src/PlatformHandler/spi_handler.o  ./src/Application/loopback.o  ./src/W5500EVB.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc11exx.o ./src/crp.o ./src/sysinit.o ./src/w5500_init.o   -lwiznet_evb_w5500evb_board -llpc_chip_11exx
+Finished building target: DNS_LPC11E36_LPCXpresso.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "DNS_LPC11E36_LPCXpresso.axf" ; arm-none-eabi-objcopy -O ihex "DNS_LPC11E36_LPCXpresso.axf" "DNS_LPC11E36_LPCXpresso.hex" ; # arm-none-eabi-objcopy -v -O binary "DNS_LPC11E36_LPCXpresso.axf" "DNS_LPC11E36_LPCXpresso.bin" ; # checksum -p LPC11E36_501 -d "DNS_LPC11E36_LPCXpresso.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19520	     36	    532	  20088	   4e78	DNS_LPC11E36_LPCXpresso.axf
+ 
+13:46:48 **** Clean-only build of configuration Debug for project SNTP_LPC11E36_LPCXpresso ****
+make clean 
+rm -rf  ./src/ioLibrary/Internet/DNS/dns.o  ./src/ioLibrary/Internet/DHCP/dhcp.o  ./src/ioLibrary/Ethernet/W5500/w5500.o  ./src/ioLibrary/Ethernet/socket.o ./src/ioLibrary/Ethernet/wizchip_conf.o  ./src/PlatformHandler/spi_handler.o  ./src/Application/loopback.o  ./src/W5500EVB.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc11exx.o ./src/crp.o ./src/sysinit.o ./src/w5500_init.o  ./src/ioLibrary/Internet/DNS/dns.d  ./src/ioLibrary/Internet/DHCP/dhcp.d  ./src/ioLibrary/Ethernet/W5500/w5500.d  ./src/ioLibrary/Ethernet/socket.d ./src/ioLibrary/Ethernet/wizchip_conf.d  ./src/PlatformHandler/spi_handler.d  ./src/Application/loopback.d  ./src/W5500EVB.d ./src/cr_startup_lpc11exx.d ./src/crp.d ./src/sysinit.d ./src/w5500_init.d  Loopback_LPC11E36_LPCXpresso.axf
+ 
+13:46:49 **** Build of configuration Debug for project SNTP_LPC11E36_LPCXpresso ****
+make all 
+Building file: ../src/ioLibrary/Internet/DNS/dns.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Internet/DNS/dns.d" -MT"src/ioLibrary/Internet/DNS/dns.d" -o "src/ioLibrary/Internet/DNS/dns.o" "../src/ioLibrary/Internet/DNS/dns.c"
+Finished building: ../src/ioLibrary/Internet/DNS/dns.c
+ 
+Building file: ../src/ioLibrary/Internet/DHCP/dhcp.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Internet/DHCP/dhcp.d" -MT"src/ioLibrary/Internet/DHCP/dhcp.d" -o "src/ioLibrary/Internet/DHCP/dhcp.o" "../src/ioLibrary/Internet/DHCP/dhcp.c"
+../src/ioLibrary/Internet/DHCP/dhcp.c: In function 'parseDHCPMSG':
+../src/ioLibrary/Internet/DHCP/dhcp.c:667:2: warning: 'type' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  return type;
+  ^
+Finished building: ../src/ioLibrary/Internet/DHCP/dhcp.c
+ 
+Building file: ../src/ioLibrary/Ethernet/W5500/w5500.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Ethernet/W5500/w5500.d" -MT"src/ioLibrary/Ethernet/W5500/w5500.d" -o "src/ioLibrary/Ethernet/W5500/w5500.o" "../src/ioLibrary/Ethernet/W5500/w5500.c"
+Finished building: ../src/ioLibrary/Ethernet/W5500/w5500.c
+ 
+Building file: ../src/ioLibrary/Ethernet/socket.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Ethernet/socket.d" -MT"src/ioLibrary/Ethernet/socket.d" -o "src/ioLibrary/Ethernet/socket.o" "../src/ioLibrary/Ethernet/socket.c"
+Finished building: ../src/ioLibrary/Ethernet/socket.c
+ 
+Building file: ../src/ioLibrary/Ethernet/wizchip_conf.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Ethernet/wizchip_conf.d" -MT"src/ioLibrary/Ethernet/wizchip_conf.d" -o "src/ioLibrary/Ethernet/wizchip_conf.o" "../src/ioLibrary/Ethernet/wizchip_conf.c"
+Finished building: ../src/ioLibrary/Ethernet/wizchip_conf.c
+ 
+Building file: ../src/PlatformHandler/spi_handler.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/PlatformHandler/spi_handler.d" -MT"src/PlatformHandler/spi_handler.d" -o "src/PlatformHandler/spi_handler.o" "../src/PlatformHandler/spi_handler.c"
+Finished building: ../src/PlatformHandler/spi_handler.c
+ 
+Building file: ../src/Application/loopback.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/Application/loopback.d" -MT"src/Application/loopback.d" -o "src/Application/loopback.o" "../src/Application/loopback.c"
+../src/Application/loopback.c: In function 'loopback_tcps':
+../src/Application/loopback.c:187:6: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+      printf("%d: Connected\r\n", sn);
+      ^
+../src/Application/loopback.c: In function 'loopback_udps':
+../src/Application/loopback.c:265:13: warning: unused variable 'packinfo' [-Wunused-variable]
+    uint8_t  packinfo = 0;
+             ^
+../src/Application/loopback.c: In function 'loopback_tcps':
+../src/Application/loopback.c:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Application/loopback.c
+ 
+Building file: ../src/W5500EVB.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/W5500EVB.d" -MT"src/W5500EVB.d" -o "src/W5500EVB.o" "../src/W5500EVB.c"
+Finished building: ../src/W5500EVB.c
+ 
+Building file: ../src/aeabi_romdiv_patch.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -g3 -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -o "src/aeabi_romdiv_patch.o" "../src/aeabi_romdiv_patch.s"
+Finished building: ../src/aeabi_romdiv_patch.s
+ 
+Building file: ../src/cr_startup_lpc11exx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc11exx.d" -MT"src/cr_startup_lpc11exx.d" -o "src/cr_startup_lpc11exx.o" "../src/cr_startup_lpc11exx.c"
+Finished building: ../src/cr_startup_lpc11exx.c
+ 
+Building file: ../src/crp.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/crp.d" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+Finished building: ../src/crp.c
+ 
+Building file: ../src/sysinit.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/sysinit.d" -MT"src/sysinit.d" -o "src/sysinit.o" "../src/sysinit.c"
+Finished building: ../src/sysinit.c
+ 
+Building file: ../src/w5500_init.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/w5500_init.d" -MT"src/w5500_init.d" -o "src/w5500_init.o" "../src/w5500_init.c"
+Finished building: ../src/w5500_init.c
+ 
+Building target: SNTP_LPC11E36_LPCXpresso.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\Debug" -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\Debug" -Xlinker -Map="SNTP_LPC11E36_LPCXpresso.map" -Xlinker --gc-sections -mcpu=cortex-m0 -mthumb -T "Loopback_LPC11E36_LPCXpresso_Debug.ld" -o "SNTP_LPC11E36_LPCXpresso.axf"  ./src/ioLibrary/Internet/DNS/dns.o  ./src/ioLibrary/Internet/DHCP/dhcp.o  ./src/ioLibrary/Ethernet/W5500/w5500.o  ./src/ioLibrary/Ethernet/socket.o ./src/ioLibrary/Ethernet/wizchip_conf.o  ./src/PlatformHandler/spi_handler.o  ./src/Application/loopback.o  ./src/W5500EVB.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc11exx.o ./src/crp.o ./src/sysinit.o ./src/w5500_init.o   -lwiznet_evb_w5500evb_board -llpc_chip_11exx
+Finished building target: SNTP_LPC11E36_LPCXpresso.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "SNTP_LPC11E36_LPCXpresso.axf" ; arm-none-eabi-objcopy -O ihex "SNTP_LPC11E36_LPCXpresso.axf" "SNTP_LPC11E36_LPCXpresso.hex" ; # arm-none-eabi-objcopy -v -O binary "SNTP_LPC11E36_LPCXpresso.axf" "SNTP_LPC11E36_LPCXpresso.bin" ; # checksum -p LPC11E36_501 -d "SNTP_LPC11E36_LPCXpresso.bin"
+   text	   data	    bss	    dec	    hex	filename
+  16376	     32	    356	  16764	   417c	SNTP_LPC11E36_LPCXpresso.axf
+ 
+15:01:39 **** Clean-only build of configuration Debug for project DNS_LPC11E36_LPCXpresso ****
+make clean 
+rm -rf  ./src/ioLibrary/Internet/DNS/dns.o  ./src/ioLibrary/Internet/DHCP/dhcp.o  ./src/ioLibrary/Ethernet/W5500/w5500.o  ./src/ioLibrary/Ethernet/socket.o ./src/ioLibrary/Ethernet/wizchip_conf.o  ./src/PlatformHandler/spi_handler.o  ./src/Application/loopback.o  ./src/W5500EVB.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc11exx.o ./src/crp.o ./src/sysinit.o ./src/w5500_init.o  ./src/ioLibrary/Internet/DNS/dns.d  ./src/ioLibrary/Internet/DHCP/dhcp.d  ./src/ioLibrary/Ethernet/W5500/w5500.d  ./src/ioLibrary/Ethernet/socket.d ./src/ioLibrary/Ethernet/wizchip_conf.d  ./src/PlatformHandler/spi_handler.d  ./src/Application/loopback.d  ./src/W5500EVB.d ./src/cr_startup_lpc11exx.d ./src/crp.d ./src/sysinit.d ./src/w5500_init.d  DNS_LPC11E36_LPCXpresso.axf
+ 
+15:01:42 **** Build of configuration Debug for project DNS_LPC11E36_LPCXpresso ****
+make all 
+Building file: ../src/ioLibrary/Internet/DNS/dns.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Internet/DNS/dns.d" -MT"src/ioLibrary/Internet/DNS/dns.d" -o "src/ioLibrary/Internet/DNS/dns.o" "../src/ioLibrary/Internet/DNS/dns.c"
+Finished building: ../src/ioLibrary/Internet/DNS/dns.c
+ 
+Building file: ../src/ioLibrary/Internet/DHCP/dhcp.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Internet/DHCP/dhcp.d" -MT"src/ioLibrary/Internet/DHCP/dhcp.d" -o "src/ioLibrary/Internet/DHCP/dhcp.o" "../src/ioLibrary/Internet/DHCP/dhcp.c"
+../src/ioLibrary/Internet/DHCP/dhcp.c: In function 'parseDHCPMSG':
+../src/ioLibrary/Internet/DHCP/dhcp.c:667:2: warning: 'type' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  return type;
+  ^
+Finished building: ../src/ioLibrary/Internet/DHCP/dhcp.c
+ 
+Building file: ../src/ioLibrary/Ethernet/W5500/w5500.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Ethernet/W5500/w5500.d" -MT"src/ioLibrary/Ethernet/W5500/w5500.d" -o "src/ioLibrary/Ethernet/W5500/w5500.o" "../src/ioLibrary/Ethernet/W5500/w5500.c"
+Finished building: ../src/ioLibrary/Ethernet/W5500/w5500.c
+ 
+Building file: ../src/ioLibrary/Ethernet/socket.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Ethernet/socket.d" -MT"src/ioLibrary/Ethernet/socket.d" -o "src/ioLibrary/Ethernet/socket.o" "../src/ioLibrary/Ethernet/socket.c"
+Finished building: ../src/ioLibrary/Ethernet/socket.c
+ 
+Building file: ../src/ioLibrary/Ethernet/wizchip_conf.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ioLibrary/Ethernet/wizchip_conf.d" -MT"src/ioLibrary/Ethernet/wizchip_conf.d" -o "src/ioLibrary/Ethernet/wizchip_conf.o" "../src/ioLibrary/Ethernet/wizchip_conf.c"
+Finished building: ../src/ioLibrary/Ethernet/wizchip_conf.c
+ 
+Building file: ../src/PlatformHandler/spi_handler.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/PlatformHandler/spi_handler.d" -MT"src/PlatformHandler/spi_handler.d" -o "src/PlatformHandler/spi_handler.o" "../src/PlatformHandler/spi_handler.c"
+Finished building: ../src/PlatformHandler/spi_handler.c
+ 
+Building file: ../src/Application/loopback.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/Application/loopback.d" -MT"src/Application/loopback.d" -o "src/Application/loopback.o" "../src/Application/loopback.c"
+../src/Application/loopback.c: In function 'loopback_tcps':
+../src/Application/loopback.c:187:6: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+      printf("%d: Connected\r\n", sn);
+      ^
+../src/Application/loopback.c: In function 'loopback_udps':
+../src/Application/loopback.c:265:13: warning: unused variable 'packinfo' [-Wunused-variable]
+    uint8_t  packinfo = 0;
+             ^
+../src/Application/loopback.c: In function 'loopback_tcps':
+../src/Application/loopback.c:257:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Application/loopback.c
+ 
+Building file: ../src/W5500EVB.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/W5500EVB.d" -MT"src/W5500EVB.d" -o "src/W5500EVB.o" "../src/W5500EVB.c"
+Finished building: ../src/W5500EVB.c
+ 
+Building file: ../src/aeabi_romdiv_patch.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -g3 -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -o "src/aeabi_romdiv_patch.o" "../src/aeabi_romdiv_patch.s"
+Finished building: ../src/aeabi_romdiv_patch.s
+ 
+Building file: ../src/cr_startup_lpc11exx.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc11exx.d" -MT"src/cr_startup_lpc11exx.d" -o "src/cr_startup_lpc11exx.o" "../src/cr_startup_lpc11exx.c"
+Finished building: ../src/cr_startup_lpc11exx.c
+ 
+Building file: ../src/crp.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/crp.d" -MT"src/crp.d" -o "src/crp.o" "../src/crp.c"
+Finished building: ../src/crp.c
+ 
+Building file: ../src/sysinit.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/sysinit.d" -MT"src/sysinit.d" -o "src/sysinit.o" "../src/sysinit.c"
+Finished building: ../src/sysinit.c
+ 
+Building file: ../src/w5500_init.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_ROMDIVIDE -D__USE_LPCOPEN -D__LPC11EXX__ -D__REDLIB__ -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I../src/Application -I../src/ioLibrary/Ethernet -I../src/ioLibrary/Ethernet/W5500 -I../src/ioLibrary/Internet/DHCP -I../src/ioLibrary/Internet/DNS -I../src/PlatformHandler -I../src -Og -g -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/w5500_init.d" -MT"src/w5500_init.d" -o "src/w5500_init.o" "../src/w5500_init.c"
+Finished building: ../src/w5500_init.c
+ 
+Building target: DNS_LPC11E36_LPCXpresso.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\Debug" -L"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\Debug" -Xlinker -Map="DNS_LPC11E36_LPCXpresso.map" -Xlinker --gc-sections -mcpu=cortex-m0 -mthumb -T "Loopback_LPC11E36_LPCXpresso_Debug.ld" -o "DNS_LPC11E36_LPCXpresso.axf"  ./src/ioLibrary/Internet/DNS/dns.o  ./src/ioLibrary/Internet/DHCP/dhcp.o  ./src/ioLibrary/Ethernet/W5500/w5500.o  ./src/ioLibrary/Ethernet/socket.o ./src/ioLibrary/Ethernet/wizchip_conf.o  ./src/PlatformHandler/spi_handler.o  ./src/Application/loopback.o  ./src/W5500EVB.o ./src/aeabi_romdiv_patch.o ./src/cr_startup_lpc11exx.o ./src/crp.o ./src/sysinit.o ./src/w5500_init.o   -lwiznet_evb_w5500evb_board -llpc_chip_11exx
+Finished building target: DNS_LPC11E36_LPCXpresso.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "DNS_LPC11E36_LPCXpresso.axf" ; arm-none-eabi-objcopy -O ihex "DNS_LPC11E36_LPCXpresso.axf" "DNS_LPC11E36_LPCXpresso.hex" ; # arm-none-eabi-objcopy -v -O binary "DNS_LPC11E36_LPCXpresso.axf" "DNS_LPC11E36_LPCXpresso.bin" ; # checksum -p LPC11E36_501 -d "DNS_LPC11E36_LPCXpresso.bin"
+   text	   data	    bss	    dec	    hex	filename
+  19520	     36	    532	  20088	   4e78	DNS_LPC11E36_LPCXpresso.axf
+ 

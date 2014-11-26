@@ -1,0 +1,28 @@
+10:55:55 **** Build of configuration Debug for project wiznet_evb_w5500evb_board ****
+make all 
+Building file: ../src/board.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M0 -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -Og -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/board.d" -MT"src/board.d" -o "src/board.o" "../src/board.c"
+Finished building: ../src/board.c
+ 
+Building file: ../src/board_sysinit.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__REDLIB__ -DDEBUG -D__CODE_RED -DCORE_M0 -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\lpc_chip_11exx\inc" -I"C:\Users\Administrator\Documents\GitHub\Loopback_LPC11E36_LPCXpresso\wiznet_evb_w5500evb_board\inc" -Og -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/board_sysinit.d" -MT"src/board_sysinit.d" -o "src/board_sysinit.o" "../src/board_sysinit.c"
+Finished building: ../src/board_sysinit.c
+ 
+Building target: libwiznet_evb_w5500evb_board.a
+Invoking: MCU Archiver
+arm-none-eabi-ar -r  "libwiznet_evb_w5500evb_board.a"  ./src/board.o ./src/board_sysinit.o   
+c:\nxp\LPCXpresso_7.2.0_153\lpcxpresso\tools\bin\arm-none-eabi-ar.exe: creating libwiznet_evb_w5500evb_board.a
+Finished building target: libwiznet_evb_w5500evb_board.a
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "libwiznet_evb_w5500evb_board.a" ; # arm-none-eabi-objdump -h -S "libwiznet_evb_w5500evb_board.a" >"libwiznet_evb_w5500evb_board.lss"
+   text	   data	    bss	    dec	    hex	filename
+    508	      0	      0	    508	    1fc	board.o (ex libwiznet_evb_w5500evb_board.a)
+    264	      0	      0	    264	    108	board_sysinit.o (ex libwiznet_evb_w5500evb_board.a)
+ 
+
+10:55:56 Build Finished (took 929ms)
+
